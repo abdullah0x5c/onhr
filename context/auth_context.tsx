@@ -17,7 +17,7 @@ const SESSION_STORAGE_KEY = "nsvs_session";
 type AuthContextValue = {
     user: SessionUser | null;
     is_ready: boolean;
-    login: (email: string, login_data: LoginSuccess) => void;
+    login: (username: string, login_data: LoginSuccess) => void;
     logout: () => void;
     set_selected_portfolio: (portfolio: string) => void;
     effective_portfolio: () => string | null;
@@ -62,7 +62,7 @@ function write_session(user: SessionUser | null): void
         return;
     }
 
-    // Prototype only: email is reused on every request without password re-check.
+    // Prototype only: username is stored in `email` and sent on every request without password re-check.
     sessionStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(user));
 }
 
@@ -77,10 +77,10 @@ export function AuthProvider({ children }: { children: ReactNode })
         set_is_ready(true);
     }, []);
 
-    const login = useCallback((email: string, login_data: LoginSuccess) =>
+    const login = useCallback((username: string, login_data: LoginSuccess) =>
     {
         const next_user: SessionUser = {
-            email,
+            email: username,
             name: login_data.name,
             designation: login_data.designation,
             home_portfolio: login_data.home_portfolio,

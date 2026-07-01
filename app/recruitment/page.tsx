@@ -121,19 +121,20 @@ export default function RecruitmentPage()
 
     useEffect(() =>
     {
+        if (!user || !is_director_role(user.designation))
+        {
+            return;
+        }
+
         void load_applicants();
         set_selected_applicant(null);
         set_selected_cms_id(null);
         set_reviews([]);
-    }, [load_applicants]);
-
-    if (!user || !is_director_role(user.designation))
-    {
-        return null;
-    }
+    }, [load_applicants, user]);
 
     return (
         <ProtectedRoute>
+            {user && is_director_role(user.designation) ? (
             <AppShell>
                 <div className="space-y-6">
                     <div className="space-y-1">
@@ -189,6 +190,7 @@ export default function RecruitmentPage()
                     </section>
                 </div>
             </AppShell>
+            ) : null}
         </ProtectedRoute>
     );
 }

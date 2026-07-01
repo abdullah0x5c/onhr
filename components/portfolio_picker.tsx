@@ -16,6 +16,7 @@ export function PortfolioPicker()
         <label className="flex flex-col gap-1 text-sm text-slate-700">
             <span className="font-medium">Portfolio</span>
             <select
+                data-testid="portfolio-picker"
                 className="rounded-md border border-slate-300 bg-white px-3 py-2"
                 value={user.selected_portfolio ?? PORTFOLIOS[0]}
                 onChange={(event) => set_selected_portfolio(event.target.value)}

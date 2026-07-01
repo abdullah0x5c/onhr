@@ -14,7 +14,7 @@ export function ReviewsList({ reviews }: { reviews: ReviewRow[] })
     }
 
     return (
-        <div className="overflow-x-auto rounded-md border border-slate-200 bg-white">
+        <div className="overflow-x-auto rounded-md border border-slate-200 bg-white" data-testid="reviews-list">
             <table className="min-w-full text-left text-sm">
                 <thead className="border-b border-slate-200 bg-slate-50">
                     <tr>

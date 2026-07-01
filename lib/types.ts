@@ -93,6 +93,7 @@ export type AddReviewResponse = {
 };
 
 export type SessionUser = {
+    // Holds the login username; sent as `email` on every API request for backend compatibility.
     email: string;
     name: string;
     designation: string;
@@ -103,6 +104,7 @@ export type SessionUser = {
 
 export type LoginRequest = {
     action: "login";
+    // Backend field name is `email`; value is the sheet username (e.g. dirhr, dirmarketing).
     email: string;
     password: string;
 };

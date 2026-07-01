@@ -46,11 +46,12 @@ export function CmsSearch({ email, on_applicant_found }: CmsSearchProps)
     }
 
     return (
-        <form onSubmit={handle_search} className="space-y-3 rounded-md border border-slate-200 bg-white p-4">
+        <form onSubmit={handle_search} className="space-y-3 rounded-md border border-slate-200 bg-white p-4" data-testid="cms-search-form">
             <h3 className="text-base font-semibold">CMS ID lookup</h3>
             <div className="flex flex-col gap-3 sm:flex-row">
                 <input
                     type="text"
+                    data-testid="cms-search-input"
                     className="flex-1 rounded-md border border-slate-300 px-3 py-2"
                     placeholder="Enter CMS ID"
                     value={cms_id}
@@ -60,6 +61,7 @@ export function CmsSearch({ email, on_applicant_found }: CmsSearchProps)
                 />
                 <button
                     type="submit"
+                    data-testid="cms-search-submit"
                     disabled={is_searching}
                     className="rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white disabled:cursor-not-allowed disabled:opacity-60"
                 >

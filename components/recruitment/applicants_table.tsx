@@ -42,11 +42,12 @@ export function ApplicantsTable({
     }
 
     return (
-        <div className="space-y-3 rounded-md border border-slate-200 bg-white p-4">
+        <div className="space-y-3 rounded-md border border-slate-200 bg-white p-4" data-testid="applicants-table">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                 <h3 className="text-base font-semibold">Applicants</h3>
                 <input
                     type="search"
+                    data-testid="applicants-search"
                     className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm sm:max-w-xs"
                     placeholder="Search by name or CMS ID"
                     value={query}

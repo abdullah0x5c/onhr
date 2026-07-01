@@ -33,6 +33,12 @@ export default function AttendancePage()
     const [is_loading, set_is_loading] = useState(false);
     const [is_submitting, set_is_submitting] = useState(false);
 
+    useEffect(() =>
+    {
+        set_submitted_date(null);
+        set_success_message("");
+    }, [portfolio]);
+
     const load_data = useCallback(async () =>
     {
         if (!user || !portfolio)
@@ -67,8 +73,6 @@ export default function AttendancePage()
                 default_statuses[String(member["CMS ID"])] = "Present";
             }
             set_statuses(default_statuses);
-            set_submitted_date(null);
-            set_success_message("");
         }
         catch (error)
         {
@@ -152,7 +156,9 @@ export default function AttendancePage()
 
                     {error_message ? <ErrorBanner message={error_message} /> : null}
                     {success_message ? (
-                        <p className="text-sm text-green-700">{success_message}</p>
+                        <p className="text-sm text-green-700" data-testid="attendance-success">
+                            {success_message}
+                        </p>
                     ) : null}
 
                     {is_loading ? (
@@ -163,6 +169,7 @@ export default function AttendancePage()
                                 <span className="font-medium">Meeting date</span>
                                 <input
                                     type="date"
+                                    data-testid="attendance-date"
                                     className="rounded-md border border-slate-300 px-3 py-2"
                                     value={date}
                                     onChange={(event) => set_date(event.target.value)}
@@ -186,6 +193,7 @@ export default function AttendancePage()
 
                             <button
                                 type="submit"
+                                data-testid="attendance-submit"
                                 disabled={submit_disabled || members.length === 0}
                                 className="rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white disabled:cursor-not-allowed disabled:opacity-60"
                             >

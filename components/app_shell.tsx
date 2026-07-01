@@ -43,6 +43,7 @@ export function AppShell({ children }: { children: React.ReactNode })
                     <nav className="flex flex-wrap items-center gap-2">
                         <Link
                             href="/attendance"
+                            data-testid="nav-attendance"
                             className={nav_link_class(pathname === "/attendance")}
                         >
                             Attendance
@@ -50,6 +51,7 @@ export function AppShell({ children }: { children: React.ReactNode })
                         {show_recruitment ? (
                             <Link
                                 href="/recruitment"
+                                data-testid="nav-recruitment"
                                 className={nav_link_class(pathname === "/recruitment")}
                             >
                                 Recruitment
@@ -57,6 +59,7 @@ export function AppShell({ children }: { children: React.ReactNode })
                         ) : null}
                         <button
                             type="button"
+                            data-testid="nav-logout"
                             onClick={logout}
                             className="rounded-md border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
                         >

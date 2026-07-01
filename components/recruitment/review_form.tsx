@@ -60,7 +60,7 @@ export function ReviewForm({
     }
 
     return (
-        <form onSubmit={handle_submit} className="space-y-4 rounded-md border border-slate-200 bg-white p-4">
+        <form onSubmit={handle_submit} className="space-y-4 rounded-md border border-slate-200 bg-white p-4" data-testid="review-form">
             <h3 className="text-base font-semibold">Add review</h3>
 
             <label className="flex flex-col gap-1 text-sm">
@@ -84,6 +84,7 @@ export function ReviewForm({
             <label className="flex flex-col gap-1 text-sm">
                 <span className="font-medium">Review text</span>
                 <textarea
+                    data-testid="review-text"
                     className="min-h-28 rounded-md border border-slate-300 px-3 py-2"
                     value={review_text}
                     onChange={(event) => set_review_text(event.target.value)}
@@ -99,6 +100,7 @@ export function ReviewForm({
 
             <button
                 type="submit"
+                data-testid="review-submit"
                 disabled={is_submitting}
                 className="rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white disabled:cursor-not-allowed disabled:opacity-60"
             >

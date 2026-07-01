@@ -31,7 +31,7 @@ export function ApplicantDetail({ applicant, portfolio }: ApplicantDetailProps)
     const entries = Object.entries(applicant);
 
     return (
-        <div className="space-y-4 rounded-md border border-slate-200 bg-white p-4">
+        <div className="space-y-4 rounded-md border border-slate-200 bg-white p-4" data-testid="applicant-detail">
             <div>
                 <h3 className="text-lg font-semibold">
                     {String(applicant.Name ?? "Applicant")}
