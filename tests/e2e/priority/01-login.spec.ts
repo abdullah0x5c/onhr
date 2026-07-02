@@ -12,7 +12,7 @@ test.describe("Priority: Login", () =>
     test("shows login form on /login", async ({ page }) =>
     {
         await page.goto("/login");
-        await expect(page.getByRole("heading", { name: "NSVS HR Portal" })).toBeVisible();
+        await expect(page.getByRole("heading", { name: "ON 26 HR Portal" })).toBeVisible();
         await expect(page.getByTestId("login-username")).toBeVisible();
         await expect(page.getByTestId("login-password")).toBeVisible();
         await expect(page.getByTestId("login-submit")).toBeVisible();

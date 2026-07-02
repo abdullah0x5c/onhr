@@ -59,7 +59,7 @@ export default function LoginPage()
                 className="w-full max-w-md space-y-4 rounded-lg border border-slate-200 bg-white p-6 shadow-sm"
             >
                 <div>
-                    <h1 className="text-2xl font-semibold">NSVS HR Portal</h1>
+                    <h1 className="text-2xl font-semibold">ON 26 HR Portal</h1>
                     <p className="mt-1 text-sm text-slate-600">Sign in with your username and password</p>
                 </div>
 

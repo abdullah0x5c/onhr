@@ -3,8 +3,8 @@ import { AuthProvider } from "@/context/auth_context";
 import "./globals.css";
 
 export const metadata: Metadata = {
-    title: "NSVS HR Portal",
-    description: "HR portal for NSVS attendance and recruitment",
+    title: "ON 26 HR Portal",
+    description: "HR portal for ON 26 attendance and recruitment",
 };
 
 export default function RootLayout({
